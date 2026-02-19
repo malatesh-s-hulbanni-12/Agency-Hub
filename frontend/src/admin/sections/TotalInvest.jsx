@@ -22,7 +22,7 @@ const TotalInvest = () => {
 
   const fetchPaymentSlips = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/payment-slips');
+      const response = await fetch('https://agency-backend-z5fi.onrender.com/api/payment-slips');
       const result = await response.json();
       
       if (result.success) {
