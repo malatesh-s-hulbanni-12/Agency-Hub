@@ -57,7 +57,7 @@ const BuyingDetails = () => {
 
   const fetchPaymentSlips = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/payment-slips');
+      const response = await fetch('https://agency-backend-z5fi.onrender.com/api/payment-slips');
       const result = await response.json();
       
       if (result.success) {
@@ -219,7 +219,7 @@ const BuyingDetails = () => {
 
   const confirmDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/payment-slips/${selectedSlip.orderId}`, {
+      const response = await fetch(`https://agency-backend-z5fi.onrender.com/api/payment-slips/${selectedSlip.orderId}`, {
         method: 'DELETE'
       });
       
@@ -311,7 +311,7 @@ const BuyingDetails = () => {
         date: selectedSlip.date
       };
 
-      const response = await fetch(`http://localhost:5000/api/payment-slips/${selectedSlip.orderId}`, {
+      const response = await fetch(`https://agency-backend-z5fi.onrender.com/api/payment-slips/${selectedSlip.orderId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
