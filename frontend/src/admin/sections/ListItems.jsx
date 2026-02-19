@@ -35,7 +35,7 @@ const ListItems = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/items');
+      const response = await fetch('https://agency-backend-z5fi.onrender.com/api/items');
       const result = await response.json();
       
       if (result.success) {
@@ -93,7 +93,7 @@ const ListItems = () => {
 
   const saveEdit = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/items/${selectedItem._id}`, {
+      const response = await fetch(`https://agency-backend-z5fi.onrender.com/api/items/${selectedItem._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ const ListItems = () => {
 
   const confirmDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/items/${selectedItem._id}`, {
+      const response = await fetch(`https://agency-backend-z5fi.onrender.com/api/items/${selectedItem._id}`, {
         method: 'DELETE'
       });
 
