@@ -20,7 +20,7 @@ const Navbar = ({ onAdminClick }) => {
       <div className="max-w-7xl mx-auto">
         <div className="glass-effect rounded-2xl px-6 py-3">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Logo - Left side */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2"
@@ -33,8 +33,8 @@ const Navbar = ({ onAdminClick }) => {
               </span>
             </motion.div>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Navigation - Centered */}
+            <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8">
               <motion.a 
                 whileHover={{ y: -2 }}
                 href="#" 
@@ -63,8 +63,10 @@ const Navbar = ({ onAdminClick }) => {
               >
                 Contact
               </motion.a>
-              
-              {/* Desktop Admin Login Button */}
+            </div>
+
+            {/* Admin Login Button - Right side */}
+            <div className="hidden md:block">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
