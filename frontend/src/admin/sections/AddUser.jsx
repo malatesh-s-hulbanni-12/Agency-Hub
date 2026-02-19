@@ -89,7 +89,7 @@ const AddUser = ({ onBack, onSuccess }) => {
       try {
         // Use the PUBLIC registration endpoint (no token needed)
         const response = await axios.post(
-          'http://localhost:5000/api/auth/register',
+          'https://agency-backend-z5fi.onrender.com/api/auth/register',
           {
             name: formData.name,
             email: formData.email,
