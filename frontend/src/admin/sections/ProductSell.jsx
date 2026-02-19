@@ -60,7 +60,7 @@ const ProductSell = ({ onAddUser }) => {
 
   // Create axios instance
   const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: 'https://agency-backend-z5fi.onrender.com/api',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -142,7 +142,7 @@ const ProductSell = ({ onAddUser }) => {
       
       console.log('Scanning QR with value:', qrValue);
       
-      const response = await fetch(`http://localhost:5000/api/items/qr/${encodeURIComponent(qrValue)}`);
+      const response = await fetch(`https://agency-backend-z5fi.onrender.com/api/items/qr/${encodeURIComponent(qrValue)}`);
       const result = await response.json();
       
       if (result.success) {
@@ -528,7 +528,7 @@ const ProductSell = ({ onAddUser }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/sales', {
+      const response = await fetch('https://agency-backend-z5fi.onrender.com/api/sales', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
