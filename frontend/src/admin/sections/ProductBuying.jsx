@@ -140,7 +140,7 @@ const ProductBuying = () => {
 
       console.log('Sending data to server:', newOrder);
 
-      const response = await fetch('http://localhost:5000/api/payment-slips', {
+      const response = await fetch('https://agency-backend-z5fi.onrender.com/api/payment-slips', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
