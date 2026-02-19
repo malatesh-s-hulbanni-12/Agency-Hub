@@ -5,6 +5,11 @@ import { FiMenu, FiX } from 'react-icons/fi';
 const Navbar = ({ onAdminClick }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleMobileAdminClick = () => {
+    setIsOpen(false); // Close mobile menu
+    onAdminClick(); // Trigger admin login
+  };
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -58,24 +63,24 @@ const Navbar = ({ onAdminClick }) => {
               >
                 Contact
               </motion.a>
+              
+              {/* Desktop Admin Login Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={onAdminClick}
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+              >
+                <span className="relative z-10">Admin Login</span>
+                <motion.div
+                  className="absolute inset-0 bg-white"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ opacity: 0.2 }}
+                />
+              </motion.button>
             </div>
-
-            {/* Admin Login Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={onAdminClick}
-              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
-            >
-              <span className="relative z-10">Admin Login</span>
-              <motion.div
-                className="absolute inset-0 bg-white"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-                style={{ opacity: 0.2 }}
-              />
-            </motion.button>
 
             {/* Mobile Menu Button */}
             <button 
@@ -99,6 +104,16 @@ const Navbar = ({ onAdminClick }) => {
                 <a href="#" className="text-gray-700 hover:text-blue-600 py-2 transition-colors">Services</a>
                 <a href="#" className="text-gray-700 hover:text-blue-600 py-2 transition-colors">About</a>
                 <a href="#" className="text-gray-700 hover:text-blue-600 py-2 transition-colors">Contact</a>
+                
+                {/* Mobile Admin Login Button */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={handleMobileAdminClick}
+                  className="w-full mt-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Admin Login
+                </motion.button>
               </div>
             </motion.div>
           )}
